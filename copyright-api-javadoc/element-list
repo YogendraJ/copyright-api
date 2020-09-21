@@ -1,0 +1,10 @@
+com.deloitte.copyright
+com.deloitte.copyright.constants
+com.deloitte.copyright.controller
+com.deloitte.copyright.exception
+com.deloitte.copyright.exception.handler
+com.deloitte.copyright.lambda.handler
+com.deloitte.copyright.model
+com.deloitte.copyright.service
+com.deloitte.copyright.service.impl
+com.deloitte.copyright.util

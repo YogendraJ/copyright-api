@@ -1,0 +1,77 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CopyRight API",
+    "description": "CopyRight API takes user input as a String and finds and replaces few words with CopyRight symbol",
+    "contact": {
+      "name": "Yogendra Joshi",
+      "email": "yjoshi@deloitte.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://txchngsk23.execute-api.us-east-1.amazonaws.com/v1",
+      "description": "CopyRight API AWS"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/copyright": {
+      "post": {
+        "summary": "Sends an Input String to the CopyRight API",
+        "description": "Adds an item to the system",
+        "requestBody": {
+          "description": "The Schema for the CopyRight Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CopyRightRequestSchema"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sends back String with copyright symbol added to the words - Oracle, Google, Amazon, Microsoft, Deloitte"
+          },
+          "400": {
+            "description": "Sent back when the input sent by consumer is Invalid"
+          },
+          "500": {
+            "description": "Sent back when there is an unhandled error processing the request sent by the consumer"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CopyRightRequestSchema": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "type": "string",
+            "example": "We like the security features of Google Cloud"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-KEY",
+        "in": "header"
+      }
+    }
+  }
+}
