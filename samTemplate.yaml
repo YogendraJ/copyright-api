@@ -2,18 +2,20 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: CopyRight API - SAM Template
 Resources:
-  CopyRight-Function:
+  CopyRightFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
+      FunctionName: CopyRightHandlerFunction
       Handler: com.deloitte.copyright.handler.StreamLambdaHandler::handleRequest
       Runtime: java11
       CodeUri: target/copyright-api-1.0.0-RELEASE.jar
       Description: 'Lambda function for the Copyright API'
       MemorySize: 1024
       Timeout: 20
-      Role: 'arn:aws:iam::093833860903:role/MyLambdaRole'
+      Policies:
+        - AWSLambdaExecute
       Events:
-        copyright-api-v1:
+        CopyRightApiSam:
           Type: Api
           Properties:
             Path: /copyright

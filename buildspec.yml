@@ -1,10 +1,15 @@
 version: 0.1
 phases:
   install:
+    runtime-versions:
+      java: corretto11
+  build:
     commands:
+      - mvn clean package
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket copyright-api-build-artifacts --output-template-file outputSamTemplate.yaml
 artifacts:
-  type: zip
+  type: 
   files:
+    - target/copyright-api-1.0.0-RELEASE.jar
     - samTemplate.yaml
     - outputSamTemplate.yaml
