@@ -1,11 +1,11 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
       java: corretto11
   build:
     commands:
+      - aws s3 rm --recursive "s3://copyright-api-build-artifacts/"
       - mvn clean package
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket copyright-api-build-artifacts --output-template-file outputSamTemplate.yaml
 artifacts:
