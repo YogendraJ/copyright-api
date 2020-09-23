@@ -72,7 +72,7 @@ public class CopyRightAppApplicationTests {
 		AwsProxyResponse lambdaProxyResponse = handler.proxy(lambdaProxyRequest, lambdaContext);
 
 		assertNotNull(lambdaProxyResponse);
-		assertTrue(lambdaProxyResponse.getBody().contains("Mandatory Element 'request' is missing in the API Request."));
+		assertTrue(lambdaProxyResponse.getBody().contains("Mandatory Element 'data' is missing in the API Request."));
 		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), lambdaProxyResponse.getStatusCode());
 	}
 }
