@@ -13,7 +13,7 @@ public class CopyRightConstants {
 	}
 
 	// Common Messages
-	public static final String MANDATORY_MISSING_MSG = "Mandatory Element 'request' is missing in the API Request.";
+	public static final String MANDATORY_MISSING_MSG = "Mandatory Element 'data' is missing in the API Request.";
 	public static final String INTERNAL_SERVER_ERROR_MSG = "Internal Server Error Occured due to";
 
 	// Exception Constants
