@@ -31,3 +31,7 @@ Resources:
             Method: post
           Auth:
             ApiKeyRequired: true
+      AutoPublishAlias: Stage
+      
+      DeploymentPreference:
+       Type: Canary10Percent10Minutes

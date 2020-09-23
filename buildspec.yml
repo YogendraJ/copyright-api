@@ -6,7 +6,8 @@ phases:
   build:
     commands:
       - mvn clean package
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket copyright-api-build-artifacts --output-template-file outputSamTemplate.yaml
+      - aws cloudformation package --template-file aws-cloudformation/samTemplate.yaml --s3-bucket copyright-api-build-artifacts --output-template-file outputSamTemplate.yaml
+      - aws cloudformation deploy --template-file outputSamTemplate.yaml --capabilities CAPABILITY_IAM --stack-name CopyRightAPI 
 artifacts:
   type: 
   files:
