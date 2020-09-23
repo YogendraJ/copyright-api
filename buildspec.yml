@@ -7,6 +7,10 @@ phases:
     commands:
       - mvn clean package
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket copyright-api-build-artifacts --output-template-file outputSamTemplate.yaml
+cache:
+  paths:
+    - '/root/.m2/**/*'
+    
 artifacts:
   type: 
   files:

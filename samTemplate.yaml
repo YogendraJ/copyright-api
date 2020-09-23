@@ -34,4 +34,4 @@ Resources:
       AutoPublishAlias: Stage
       
       DeploymentPreference:
-       Type: Canary10Percent10Minutes
+       Type: Canary10Percent5Minutes
