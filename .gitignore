@@ -43,6 +43,8 @@ tmp/
 *~.nib
 local.properties
 .loadpath
+.factorypath	
+README.md
 
 ##########################
 ## NetBeans
